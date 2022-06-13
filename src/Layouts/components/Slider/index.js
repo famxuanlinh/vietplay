@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { sliderItems } from '~/pages/data';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretSquareLeft, faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
 import { faCircleLeft, faCircleRight } from '@fortawesome/free-regular-svg-icons';
 
 const Container = styled.div`
@@ -47,6 +46,7 @@ const Slide = styled.div`
     width: 100vw;
     height: 100vh;
     /* background-color: #${(props) => props.bg}; */
+    position: relative;
 `;
 
 const Image = styled.img`
@@ -135,7 +135,7 @@ const Button2 = styled.button`
 const Slider = () => {
     const [slideIndex, setSlideIndex] = useState(0);
     const handleClick = (direction) => {
-        if (direction == 'left') {
+        if (direction === 'left') {
             setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
         } else {
             setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);

@@ -6,9 +6,9 @@ import styles from './Header.module.scss';
 import 'tippy.js/dist/tippy.css'; // optional
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ZaloIcon } from './Icon';
-import { faBagShopping, faMagnifyingGlass, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { useEffect } from 'react';
+// import { ZaloIcon } from './Icon';
+import { faBagShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+// import { useEffect } from 'react';
 import { categories } from '~/pages/data';
 
 const cx = classNames.bind(styles);
