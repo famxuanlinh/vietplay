@@ -1,3 +1,4 @@
+import BestSale from '../components/BestSale';
 import Header from '../components/Header';
 import Slider from '../components/Slider';
 import Sidebar from './Sidebar';
@@ -7,6 +8,7 @@ function DefaultLayout({ children }) {
         <div>
             <Header />
             <Slider />
+            <BestSale />
             <div className="container">
                 <Sidebar />
                 <div className="content">{children}</div>

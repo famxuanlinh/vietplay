@@ -16,21 +16,21 @@ const Container = styled.div`
 const Arrow = styled.div`
     width: 50px;
     height: 50px;
-    background-color: #fef6f6;
+    background-color: gray 0.8;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 0;
-    left: ${(props) => props.direction === 'left' && '10px'};
-    right: ${(props) => props.direction === 'right' && '10px'};
-    bottom: 0;
+    right: ${(props) => props.direction === 'left' && '194px'};
+    right: ${(props) => props.direction === 'right' && '140px'};
+    bottom: 16px;
     margin: auto;
     cursor: pointer;
     opacity: 0.5;
     z-index: 2;
     font-size: 30px;
+    color: var(--primary-text);
 `;
 const Wrapper = styled.div`
     height: 100%;
@@ -117,6 +117,7 @@ const Button1 = styled.button`
     min-width: 291px;
     height: 50px;
     border-radius: 5px;
+    color: var(--primary-text);
 `;
 
 const Button2 = styled.button`
@@ -130,6 +131,7 @@ const Button2 = styled.button`
     min-width: 185px;
     height: 50px;
     border-radius: 5px;
+    color: var(--primary-text);
 `;
 
 const Slider = () => {
