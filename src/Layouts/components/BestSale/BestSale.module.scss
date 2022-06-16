@@ -1,0 +1,114 @@
+.wrapper {
+    background: rgb(20, 20, 20);
+    width: 100vw;
+    height: 994.25px;
+    padding: 40px 0;
+}
+
+.inner {
+    width: 1636px;
+    height: 100%;
+    padding: auto;
+    margin: auto;
+    position: relative;
+}
+
+.title {
+    font-size: 2.4rem;
+    color: var(--primary-text);
+    padding-bottom: 12px;
+}
+
+.container {
+    display: flex;
+    overflow-wrap: break-word;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.content {
+    border-top-right-radius: 0.6rem;
+    border-top-left-radius: 0.6rem;
+    max-width: 311.31px;
+}
+
+// .container + .container {
+//     margin-right: 20px;
+// }
+.content + .content {
+    margin-bottom: 20px;
+}
+
+.content-top {
+    position: relative;
+}
+
+.img {
+    max-width: 311.31px;
+    height: 311.31px;
+    border-top-right-radius: 0.6rem;
+    border-top-left-radius: 0.6rem;
+    object-fit: cover;
+}
+
+.top-discount {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 52.13px;
+    height: 67.19px;
+    background-color: red;
+    border-top-right-radius: 0.6rem;
+}
+
+.discount {
+    color: var(--primary-text);
+    font-size: 16.8px;
+    width: 100%;
+    height: 29.19px;
+    display: flex;
+    justify-content: center;
+}
+
+.discount1 {
+    color: var(--primary-text);
+    font-size: 12px;
+    width: 100%;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    padding-top: 0;
+}
+
+.content-bottom {
+    padding: 4px 12px 12px;
+    background: #262626;
+    border-bottom-right-radius: 0.6rem;
+    border-bottom-left-radius: 0.6rem;
+}
+
+.title-name {
+    color: var(--gray-color);
+    font-size: 1.12rem;
+}
+
+.title-name2 {
+    color: var(--primary-text);
+    font-size: 1.4rem;
+}
+
+.sale-off {
+    color: var(--gray-color);
+    text-decoration: line-through;
+    font-size: 1.6rem;
+}
+
+.sprice {
+    color: var(--primary-text);
+    font-size: 1.8rem;
+}
+
+.sold {
+    color: var(--gray-color);
+    font-size: 1.2rem;
+    text-align: end;
+}
