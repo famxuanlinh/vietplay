@@ -9,25 +9,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { ZaloIcon } from './Icon';
 import { faBagShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 // import { useEffect } from 'react';
-import { categories } from '~/pages/data';
+// import { categories } from '~/pages/data';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-// useEffect(() => {
-//     fetch(`https://vietplayplus.com/api/categories/all`)
-//         .then((res) => res.json())
-//         .then((res) => {
-//             console.log(res.data);
-//         });
-// }, []);
-
 function Header() {
+    const [postList, setPostList] = useState([]);
+
+    const getCategory = () => {
+        fetch(`https://vietplayplus.com/api/categories/all`)
+            .then((res) => res.json())
+            .then((res) => {
+                setPostList(res.data);
+            });
+    };
+
+    useEffect(() => {
+        getCategory();
+    }, []);
+
     return (
         <header className={cx('wrapper')} id="myHeader">
             <div className={cx('inner')}>
                 <div className={cx('list-menu')}>
                     <div className={cx('left-menu')}>
-                        <Link to="./">
+                        <Link to="/">
                             <img
                                 src="https://vietplayplus.com/_next/image?url=%2Fimages%2Flogo.png&w=256&q=75"
                                 alt="vietplay"
@@ -36,12 +44,12 @@ function Header() {
                         </Link>
                         <div className={cx('menus')}>
                             <div className={cx('menu')}>
-                                <Link to="" className={cx('menu_items')}>
+                                <Link to="/" className={cx('menu_items')}>
                                     Trang Chủ
                                 </Link>
                             </div>
                             <div className={cx('menu')}>
-                                <Link to="" className={cx('menu_items')}>
+                                <Link to="/store" className={cx('menu_items')}>
                                     Cửa Hàng
                                 </Link>
                             </div>
@@ -51,8 +59,10 @@ function Header() {
                                 render={(attrs) => (
                                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                                         <ul className={cx('list-items')}>
-                                            {categories.map((item) => (
-                                                <li className={cx('item')}>{item.name}</li>
+                                            {postList.map((item) => (
+                                                <Link to={`/danh-muc/${item.slug}`}>
+                                                    <li className={cx('item')}>{item.name}</li>
+                                                </Link>
                                             ))}
                                         </ul>
                                     </div>

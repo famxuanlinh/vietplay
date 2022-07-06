@@ -1,13 +1,15 @@
 .wrapper {
     background: rgb(20, 20, 20);
     width: 100vw;
-    height: 410px;
-    padding: 40px 0;
+    height: 490.8px;
+    padding: 40px 133.203px;
+    position: relative;
 }
 
 .background {
     width: 1636.59px;
-    height: 100%;
+    height: 410px;
+    border-radius: 10px;
     position: relative;
     margin: auto;
     padding: auto;
@@ -16,24 +18,43 @@
 .content {
     position: absolute;
     width: 728.3px;
-    top: 0;
-    right: 0;
+    top: 124px;
+    left: 1005px;
 }
 
-.form-group {
+.title {
+    font-size: 19.2px;
+    color: var(--primary-text);
+    text-transform: uppercase;
+    padding-bottom: 12px;
 }
 
-.inputAddress {
+.form {
+    display: block;
 }
 
-.form-control {
+.tile-item {
+    font-size: 16px;
+    color: var(--primary-text);
 }
 
-.form-group {
+.item-input {
 }
 
-.form-control {
+.form-input {
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    margin-bottom: 12px;
 }
 
 .button {
+    width: 500px;
+    height: 40px;
+    color: var(--primary-text);
+
+    background-color: red;
+    border-radius: 5px;
+    margin-top: 12px;
+    font-size: 16px;
 }

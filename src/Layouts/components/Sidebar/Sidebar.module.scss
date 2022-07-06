@@ -1,0 +1,41 @@
+.wrapper {
+    background-color: var(--primary-color);
+    max-height: 978.62px;
+    width: 319.31px;
+}
+.inner {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    .header {
+        padding: 8px 0;
+        max-width: 319.32px;
+        font-size: 20px;
+        color: var(--primary-text);
+    }
+
+    .list-items {
+        max-width: 319.32px;
+        height: 100%;
+        padding: 20px 0;
+        border-bottom: 0.5px solid gray;
+        border-top: 0.5px solid gray;
+
+        a {
+            text-decoration: none;
+        }
+        .item {
+            font-size: 16px;
+            list-style: none;
+            color: var(--gray-color);
+            padding: 8px 10px;
+
+            &:hover {
+                background-color: #171923;
+            }
+        }
+    }
+}

@@ -1,17 +1,19 @@
 //Layouts
-import { HeaderOnly } from '~/Layouts';
+import { DefaultLayout, MainLayout } from '~/Layouts';
 
 //Pages
 import Home from '~/pages/Home';
-import Following from '~/pages/Following';
-import Profile from '~/pages/Profile';
+import Store from '~/pages/Store';
 import Cart from '~/pages/Cart';
+import Category from '~/pages/Category';
+import Product from '~/pages/Product';
 
 const publicRoutes = [
-    { path: '/', component: Home },
-    { path: '/following', component: Following },
-    { path: '/profile', component: Profile },
-    { path: '/cart', component: Cart, layout: HeaderOnly },
+    { path: '/', component: Home, layout: DefaultLayout },
+    { path: '/store', component: Store, layout: MainLayout },
+    { path: '/product', component: Product, layout: DefaultLayout },
+    { path: '/cart', component: Cart, layout: DefaultLayout },
+    { path: '/danh-muc/:id', component: Category, layout: MainLayout },
 ];
 
 const privateRoutes = [];
