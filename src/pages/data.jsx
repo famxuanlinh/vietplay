@@ -10,6 +10,8 @@ export const sliderItems = [
         title_btn1: 'NETFLIX SHARE',
         title_btn2: 'THỬ NGAY',
         color: '#ff0000',
+        slug: 'netflix',
+        slug1: 'goi-netflix-premium-gia-dinh-1-thang',
     },
     {
         id: 2,
@@ -22,6 +24,8 @@ export const sliderItems = [
         title_btn1: 'SPOTIFY SHARE',
         title_btn2: 'THỬ NGAY',
         color: '#02fc0f',
+        slug: 'spotify',
+        slug1: 'goi-spotify-premium-vip-4-thang',
     },
     {
         id: 3,
@@ -34,6 +38,8 @@ export const sliderItems = [
         title_btn1: 'YOUTUBE SHARE',
         title_btn2: 'THỬ NGAY',
         color: '#ff0000',
+        slug: 'youtube',
+        slug1: 'goi-youtube-premium-3-thang',
     },
     {
         id: 4,
@@ -46,6 +52,8 @@ export const sliderItems = [
         title_btn1: 'TIDAL SHARE',
         title_btn2: 'THỬ NGAY',
         color: '#00ffd5',
+        slug: 'tidal',
+        slug2: 'goi-tidal-hifi-plus-3-thang',
     },
 ];
 

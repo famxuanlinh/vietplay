@@ -1,5 +1,7 @@
+import ProductsStore from '~/Layouts/components/ProductsStore';
+
 function Store() {
-    return <h1>Hí anh e</h1>;
+    return <ProductsStore />;
 }
 
 export default Store;

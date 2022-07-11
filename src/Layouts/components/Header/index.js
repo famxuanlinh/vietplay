@@ -86,12 +86,18 @@ function Header() {
                         <button className={cx('btn-menu')}>
                             <FontAwesomeIcon icon={faMagnifyingGlass} />
                         </button>
-                        <button className={cx('btn-menu')}>
-                            <p className={cx('noty')}>24</p>
-                            <FontAwesomeIcon icon={faBagShopping} />
-                        </button>
-                        <button className={cx('sign_in')}>Đăng Kí</button>
-                        <button className={cx('log_in')}>Đăng Nhập</button>
+                        <Link to="/gio-hang">
+                            <button className={cx('btn-menu')}>
+                                <p className={cx('noty')}>24</p>
+                                <FontAwesomeIcon icon={faBagShopping} />
+                            </button>
+                        </Link>
+                        <Link to="/dang-ki">
+                            <button className={cx('sign_in')}>Đăng Kí</button>
+                        </Link>
+                        <Link to="/dang-nhap">
+                            <button className={cx('log_in')}>Đăng Nhập</button>
+                        </Link>
                     </div>
                 </div>
             </div>

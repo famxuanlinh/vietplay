@@ -1,0 +1,121 @@
+.wrapper {
+    max-width: 368px;
+    background-color: #0e0e0c;
+    padding: 32px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+.validate {
+}
+.title {
+    color: var(--primary-text);
+    font-size: 1.92rem;
+    margin-bottom: 15px;
+}
+.form-item {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--gray-color2);
+    border-radius: 5px;
+    margin-bottom: 15px;
+
+    &:hover {
+        border: 1px solid rgb(196, 193, 193);
+    }
+}
+
+.form-item_icon {
+    font-size: 1.8rem;
+    color: white;
+    padding: 0 8px;
+}
+.form-item_input {
+    color: var(--gray-color2);
+    font-size: 1.6rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: 260px;
+    height: 40px;
+}
+
+.or {
+    position: relative;
+    margin: 20px 0;
+}
+
+.or-hr {
+    color: white;
+}
+
+.or-title {
+    position: absolute;
+    left: 40%;
+    top: -13px;
+    padding: 0 5px;
+    font-size: 1.6rem;
+    color: var(--gray-color2);
+    background-color: #0e0e0c;
+}
+.form-item_input2 {
+    color: var(--gray-color2);
+    font-size: 1.6rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 200px;
+    align-items: center;
+    height: 36px;
+}
+.form-item_btn {
+    font-size: 1.4rem;
+    padding: 0 12px;
+    border-radius: 5px;
+    background-color: #1f2020;
+    color: var(--primary-text);
+    border: 0;
+
+    &:hover {
+        background-color: #434444;
+    }
+}
+
+.forgot-password {
+    color: var(--gray-color2);
+    position: relative;
+    font-size: 1.6rem;
+    right: -188px;
+    bottom: 11px;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        color: var(--gray-color2);
+    }
+}
+
+.btn-register {
+    padding: 6px 16px;
+    font-size: 1.6rem;
+    width: 100%;
+    color: var(--primary-text);
+    border: none;
+    background-color: red;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    &:hover {
+        background-color: gray;
+    }
+}
+.have-account {
+    font-size: 1.44rem;
+    color: var(--primary-text);
+}
+.login-btn {
+    color: red;
+    font-size: 1.44rem;
+    padding-left: 5px;
+}

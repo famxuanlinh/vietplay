@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { sliderItems } from '~/pages/data';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleLeft, faCircleRight } from '@fortawesome/free-regular-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     width: 100%;
@@ -161,8 +162,12 @@ const Slider = () => {
                                     <Desc>{item.desc}</Desc>
                                 </Descs>
                                 <Btns>
-                                    <Button1 color={item.color}>{item.title_btn1}</Button1>
-                                    <Button2 color={item.color}>THỬ NGAY</Button2>
+                                    <Link to={`/danh-muc/${item.slug}`}>
+                                        <Button1 color={item.color}>{item.title_btn1}</Button1>
+                                    </Link>
+                                    <Link to={`/san-pham/${item.slug1}`}>
+                                        <Button2 color={item.color}>THỬ NGAY</Button2>
+                                    </Link>
                                 </Btns>
                             </InfoContainer>
 

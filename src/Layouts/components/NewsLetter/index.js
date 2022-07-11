@@ -28,7 +28,7 @@ const NewsLetter = () => {
                             Email
                         </label>
                         <div className={cx('item-input')}>
-                            <input type="text" className={cx('form-input')} id="inputAddress2" />
+                            <input type="email" className={cx('form-input')} id="inputAddress2" />
                         </div>
                     </div>
                 </form>
