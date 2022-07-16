@@ -4,23 +4,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import QuantityInput from '~/components/QuantityInput';
+import { useCart } from '~/contexts/Cart/ContextProvider';
+import formatCurrency from '~/utils/formatCurrency';
 import styles from './ProductInfo.module.scss';
 
 const cx = classNames.bind(styles);
 
 function ProductInfo() {
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState(null);
+    const { handleAddToCart } = useCart();
+    const [qty, setQty] = useState(1);
     const { slug } = useParams();
-
-    const [cartItems, setCartItems] = useState([]);
-    const onAdd = (product) => {
-        const exist = cartItems.find((x) => x.id === product.id);
-        if (exist) {
-            setCartItems(cartItems.map((x) => (x.id == product.id ? { ...exist, qty: exist.qty + 1 } : x)));
-        } else {
-            setCartItems([...cartItems, { ...product, qty: 1 }]);
-        }
-    };
 
     const getProduct = (slug) => {
         fetch(`https://vietplayplus.com/api/products/${slug}`)
@@ -33,9 +28,11 @@ function ProductInfo() {
         getProduct(slug);
     }, [slug]);
 
+    if (!product) return <div>Loading...</div>;
+
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('inner')} key={product.id}>
+            <div className={cx('inner')}>
                 <nav aria-label="breadcrumb">
                     <ol className={cx('breadcrumb')}>
                         <li className={cx('breadcrumb-item')}>
@@ -53,7 +50,7 @@ function ProductInfo() {
                     <div className={cx('product-left')}>
                         <img
                             className={cx('product-img')}
-                            src={`${`https://vietplayplus.com/api`}/${product.images?.[0].formats.medium.url}`}
+                            src={`${`https://vietplayplus.com/api`}/${product?.images?.[0].formats.medium.url}`}
                             alt=""
                         />
                     </div>
@@ -82,8 +79,8 @@ function ProductInfo() {
                             <span className={cx('product-sold_title')}>Đã bán</span>
                         </div>
                         <div className={cx('product-price')}>
-                            <p className={cx('product-price_discount')}>{product.price}d</p>
-                            <p className={cx('product-price_none')}>{product.priceDiscount}</p>
+                            <p className={cx('product-price_discount')}>{formatCurrency(product.price)}</p>
+                            <p className={cx('product-price_none')}>{formatCurrency(product.priceDiscount)}</p>
                             <p className={cx('product-discount')}>50% GIẢM</p>
                         </div>
                         <div className={cx('product-desc')}>
@@ -104,13 +101,14 @@ function ProductInfo() {
                         <div className={cx('product-quality')}>
                             <span>Số Lượng</span>
                             <span className={cx('product-quality_content')}>
-                                <button className={cx('product-quality_item')}>-</button>
-                                <input type="text" className={cx('product-quality_item2')} value="1" />
-                                <button className={cx('product-quality_item')}>+</button>
+                                <QuantityInput onChange={(newQty) => setQty(newQty)} />
                             </span>
                         </div>
                         <div className={cx('product-btn')}>
-                            <button className={cx('product-btn_cart')}>
+                            <button
+                                className={cx('product-btn_cart')}
+                                onClick={() => handleAddToCart({ ...product, qty })}
+                            >
                                 <FontAwesomeIcon className={cx('product-btn_cart_icon')} icon={faCartShopping} />
                                 Thêm Vào Giỏ Hàng
                             </button>

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { sliderItems } from '~/pages/data';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleLeft, faCircleRight } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
+import { faChevronCircleLeft, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
     width: 100%;
@@ -147,7 +147,7 @@ const Slider = () => {
     return (
         <Container>
             <Arrow direction="left" onClick={() => handleClick('left')}>
-                <FontAwesomeIcon icon={faCircleLeft} />
+                <FontAwesomeIcon icon={faChevronCircleLeft} />
             </Arrow>
             <Wrapper slideIndex={slideIndex}>
                 {sliderItems.map((item) => (
@@ -177,7 +177,7 @@ const Slider = () => {
                 ))}
             </Wrapper>
             <Arrow direction="right" onClick={() => handleClick('right')}>
-                <FontAwesomeIcon icon={faCircleRight} />
+                <FontAwesomeIcon icon={faChevronCircleRight} />
             </Arrow>
         </Container>
     );

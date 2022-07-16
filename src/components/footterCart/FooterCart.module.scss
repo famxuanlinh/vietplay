@@ -1,0 +1,41 @@
+.product-total {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.product-total_title {
+    display: flex;
+    font-size: 1.92rem;
+    color: var(--primary-text);
+}
+
+.product-total_title_sum {
+    font-size: 3.2rem;
+    color: red;
+    margin-left: 20px;
+}
+
+.product-total_save {
+    font-size: 1.6rem;
+    color: var(--gray-color2);
+    display: block;
+    justify-content: flex-end;
+}
+
+.product-total_save_total {
+    font-size: 1.6rem;
+    color: red;
+}
+
+.product-total_right {
+    padding-left: 40px;
+}
+
+.product-total_right_button {
+    padding: 5px 40px;
+    color: var(--primary-text);
+    background-color: red;
+    font-size: 2.4rem;
+}

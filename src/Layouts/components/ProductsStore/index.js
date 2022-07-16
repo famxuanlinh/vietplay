@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
+import formatCurrency from '~/utils/formatCurrency';
 import Paging from './Paging';
 import styles from './Products.module.scss';
 
@@ -84,8 +85,8 @@ function ProductsStore() {
                                 <div className={cx('content-bottom')}>
                                     <div className={cx('title-name')}>{product?.name}</div>
                                     <div className={cx('title-name2')}>{product.name}</div>
-                                    <div className={cx('sale-off')}>{product.price} đ</div>
-                                    <div className={cx('price')}>{product.priceDiscount} đ</div>
+                                    <div className={cx('sale-off')}>{formatCurrency(product.price)}</div>
+                                    <div className={cx('price')}>{formatCurrency(product.priceDiscount)}</div>
                                     <div className={cx('sold')}>Đã bán {product.sold}</div>
                                 </div>
                             </div>

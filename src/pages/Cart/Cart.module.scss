@@ -1,7 +1,7 @@
 .wrapper {
     background-color: rgb(20, 20, 20);
     width: 100vw;
-    height: 500px;
+    // height: 500px;
     padding-top: 120px;
 }
 
@@ -16,6 +16,7 @@
     width: 100%;
     font-size: 1.92rem;
     color: white;
+    margin-bottom: 0;
 
     th {
         height: 52px;
@@ -32,6 +33,8 @@
     // border-radius: 10px;
 }
 .title {
+    font-size: 2.4rem;
+    color: var(--primary-text);
 }
 
 .product-name {

@@ -1,15 +1,12 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import formatCurrency from '~/utils/formatCurrency';
 import { PriceShockToday } from './priceShockToday';
 import styles from './ProductPriceShockToday.module.scss';
 
 const cx = classNames.bind(styles);
 
 function ProductPriceShockToday() {
-    // const Pecent = (priceDiscount, price) => {
-    //     return Math.floor((priceDiscount * 100) / price);
-    // };
-
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -38,8 +35,8 @@ function ProductPriceShockToday() {
                                 <div className={cx('content-bottom')}>
                                     <div className={cx('title-name')}>{item.categories?.[0].name}</div>
                                     <div className={cx('title-name2')}>{item.name}</div>
-                                    <div className={cx('sale-off')}>{item.price} đ</div>
-                                    <div className={cx('sprice')}>{item.priceDiscount} đ</div>
+                                    <div className={cx('sale-off')}>{formatCurrency(item.price)}</div>
+                                    <div className={cx('sprice')}>{formatCurrency(item.priceDiscount)}</div>
                                     <div className={cx('sold')}>Đã bán {item.sold}</div>
                                 </div>
                             </div>

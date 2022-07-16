@@ -6,17 +6,16 @@ import styles from './Header.module.scss';
 import 'tippy.js/dist/tippy.css'; // optional
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { ZaloIcon } from './Icon';
 import { faBagShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-// import { useEffect } from 'react';
-// import { categories } from '~/pages/data';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useCart } from '~/contexts/Cart/ContextProvider';
 
 const cx = classNames.bind(styles);
 
 function Header() {
     const [postList, setPostList] = useState([]);
+    const { totalQty } = useCart();
 
     const getCategory = () => {
         fetch(`https://vietplayplus.com/api/categories/all`)
@@ -88,7 +87,7 @@ function Header() {
                         </button>
                         <Link to="/gio-hang">
                             <button className={cx('btn-menu')}>
-                                <p className={cx('noty')}>24</p>
+                                <p className={cx('noty')}>{totalQty}</p>
                                 <FontAwesomeIcon icon={faBagShopping} />
                             </button>
                         </Link>

@@ -1,9 +1,15 @@
 import classNames from 'classnames/bind';
 import styles from './Cart.module.scss';
+import QuantityInput from '~/components/QuantityInput';
+import { useCart } from '~/contexts/Cart/ContextProvider';
+import formatCurrency from '~/utils/formatCurrency';
+import FooterCart from '~/components/footterCart';
 
 const cx = classNames.bind(styles);
 
 function Cart() {
+    const { products, handleUpdateCart, handleDeleteItemInCart } = useCart();
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -16,39 +22,46 @@ function Cart() {
                         <th style={{ width: '11%' }}>Số Tiền</th>
                         <th style={{ width: '14%' }}>Thao Tác</th>
                     </tr>
-                    <tr>
-                        <td>
-                            <div className={cx('product-name')}>
-                                <img
-                                    className={cx('product-img')}
-                                    src="https://vietplayplus.com/api/public/files/SanPham_NET%201_EStaVetsQ.jpg"
-                                    alt=""
+                    {products.map((data) => (
+                        <tr key={data.id} style={{ borderBottom: '1px solid gray' }}>
+                            <td>
+                                <div className={cx('product-name')}>
+                                    <img
+                                        className={cx('product-img')}
+                                        src="https://vietplayplus.com/api/public/files/SanPham_NET%201_EStaVetsQ.jpg"
+                                        alt=""
+                                    />
+                                    <div className={cx('product-title')}>{data.name}</div>
+                                </div>
+                            </td>
+                            <td>
+                                <div className={cx('product-price')}>
+                                    <span className={cx('product-price_discount')}>{formatCurrency(data.price)}</span>
+                                    <span className={cx('product-price_none')}>
+                                        {formatCurrency(data.priceDiscount || data.price)}
+                                    </span>
+                                </div>
+                            </td>
+                            <td>
+                                <QuantityInput
+                                    onChange={(newQty) => handleUpdateCart(data.id, newQty)}
+                                    defaultQty={data.qty}
                                 />
-                                <div className={cx('product-title')}>Gói Spotify Premium (5 Năm)</div>
-                            </div>
-                        </td>
-                        <td>
-                            <div className={cx('product-price')}>
-                                <span className={cx('product-price_discount')}>30000d</span>
-                                <span className={cx('product-price_none')}>70000d</span>
-                            </div>
-                        </td>
-                        <td>
-                            <span className={cx('product-quality_content')}>
-                                <button className={cx('product-quality_item')}>-</button>
-                                <input type="text" className={cx('product-quality_item2')} value="1" />
-                                <button className={cx('product-quality_item')}>+</button>
-                            </span>
-                        </td>
-                        <td>
-                            <div className={cx('product-sum')}>200.000d</div>
-                        </td>
-                        <td>
-                            <button className={cx('product-btn')}>Xoá</button>
-                        </td>
-                    </tr>
+                            </td>
+                            <td>
+                                <div className={cx('product-sum')}>
+                                    {formatCurrency((data.priceDiscount || data.price) * data.qty)}
+                                </div>
+                            </td>
+                            <td>
+                                <button className={cx('product-btn')} onClick={() => handleDeleteItemInCart(data.id)}>
+                                    Xoá
+                                </button>
+                            </td>
+                        </tr>
+                    ))}
                 </table>
-                <hr className={cx('product_hr')}></hr>
+                <FooterCart />
             </div>
         </div>
     );
