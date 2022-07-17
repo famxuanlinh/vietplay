@@ -22,11 +22,7 @@ function ProductPriceShockToday() {
                                         alt=""
                                     />
                                     <div className={cx('top-discount')}>
-                                        <div
-                                            className={cx('discount')}
-                                            priceDiscount={item.priceDiscount}
-                                            price={item.price}
-                                        >
+                                        <div className={cx('discount')} price={item.price}>
                                             50%
                                         </div>
                                         <div className={cx('discount1')}>GIẢM</div>

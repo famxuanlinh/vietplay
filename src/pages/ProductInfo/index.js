@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import QuantityInput from '~/components/QuantityInput';
-import { useCart } from '~/contexts/Cart/ContextProvider';
+import { useCart } from '~/contexts/Cart/CartContext';
 import formatCurrency from '~/utils/formatCurrency';
 import styles from './ProductInfo.module.scss';
 

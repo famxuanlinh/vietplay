@@ -10,7 +10,6 @@ const cx = classNames.bind(styles);
 
 function ProductsStore() {
     const [products, setProducts] = useState([]);
-    console.log('🚀 ~ file: index.js ~ line 13 ~ ProductsStore ~ products', products);
 
     // create page state to manage page
 

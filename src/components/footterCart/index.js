@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCart } from '~/contexts/Cart/ContextProvider';
+import { useCart } from '~/contexts/Cart/CartContext';
 import formatCurrency from '~/utils/formatCurrency';
 import classNames from 'classnames/bind';
 import styles from './FooterCart.module.scss';

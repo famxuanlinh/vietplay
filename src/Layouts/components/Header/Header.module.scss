@@ -137,3 +137,18 @@
         background-color: gray;
     }
 }
+
+.userInfo {
+    background-color: transparent;
+    border: none;
+}
+.userName {
+    font-size: 1.6rem;
+    color: var(--primary-text);
+    padding: 8px 12px;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: rgb(23, 23, 56);
+    }
+}

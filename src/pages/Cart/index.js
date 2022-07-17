@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './Cart.module.scss';
 import QuantityInput from '~/components/QuantityInput';
-import { useCart } from '~/contexts/Cart/ContextProvider';
+import { useCart } from '~/contexts/Cart/CartContext';
 import formatCurrency from '~/utils/formatCurrency';
 import FooterCart from '~/components/footterCart';
 

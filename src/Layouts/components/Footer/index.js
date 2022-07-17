@@ -23,7 +23,7 @@ function Footer() {
                 </div>
                 <div className={cx('midle-right')}>
                     <div className={cx('title')}>PHƯƠNG THỨC THANH TOÁN</div>
-                    <img className={cx('img-item')} src="../assets/thanhToan.png" alt="Phuong thuc thanh toan" />
+                    <img className={cx('img-item')} src="thanhToan.png" alt="Phuong thuc thanh toan" />
                 </div>
                 <div className={cx('right')}>
                     <div className={cx('title')}>KẾT NỐI VỚI CHÚNG TÔI</div>
