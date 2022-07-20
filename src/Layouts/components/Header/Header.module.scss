@@ -50,7 +50,7 @@
 .list-items {
     background-color: var(--primary-color);
     width: 242px;
-    height: 70vh;
+    max-height: 70vh;
     overflow-y: auto; //Cuộn đc
     overflow: auto;
     list-style: none;
@@ -137,6 +137,11 @@
     &:hover {
         background-color: gray;
     }
+}
+
+.userInfo-list {
+}
+.userInfo-list_item {
 }
 
 .userInfo {

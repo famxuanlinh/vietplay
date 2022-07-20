@@ -95,11 +95,39 @@ function Header() {
                             </button>
                         </Link>
                         {userInfo ? (
-                            <button className={cx('userInfo')}>
-                                <span className={cx('userName')}>
-                                    <FontAwesomeIcon icon={faUser} /> {userInfo.name}
-                                </span>
-                            </button>
+                            <Tippy
+                                interactive
+                                placement="top-end"
+                                hideOnClick="toggle"
+                                trigger="click"
+                                render={(attrs) => (
+                                    <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                                        <ul className={cx('list-items')}>
+                                            <Link to="/quan-li-tai-khoan">
+                                                <li className={cx('item')}>Quản lí tài khoản</li>
+                                            </Link>
+                                            <Link to="/thay-doi-mat-khau">
+                                                <li className={cx('item')}>Thay đổi mật khẩu</li>
+                                            </Link>
+                                            <Link to="/don-hang">
+                                                <li className={cx('item')}>Đơn hàng</li>
+                                            </Link>
+                                            <Link to="/nhan-tai-khoan">
+                                                <li className={cx('item')}>Nhận tài khoản</li>
+                                            </Link>
+                                            <Link to="/">
+                                                <li className={cx('item')}>Đăng xuất</li>
+                                            </Link>
+                                        </ul>
+                                    </div>
+                                )}
+                            >
+                                <button className={cx('userInfo')}>
+                                    <span className={cx('userName')}>
+                                        <FontAwesomeIcon icon={faUser} /> {userInfo.name}
+                                    </span>
+                                </button>
+                            </Tippy>
                         ) : (
                             <>
                                 <Link to="/dang-ki">

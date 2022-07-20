@@ -10,6 +10,7 @@ import Register from '~/pages/Register';
 import ProductInfo from '~/pages/ProductInfo';
 import Login from '~/pages/Login';
 import ForgotPassword from '~/pages/ForgotPassword';
+import ManageAcc from '~/pages/ManageAcc';
 // import ProductInfo from '~/Layouts/components/ProductInfo';
 
 const publicRoutes = [
@@ -22,6 +23,7 @@ const publicRoutes = [
     { path: '/quen-mat-khau', component: ForgotPassword, layout: DefaultLayout },
     { path: '/danh-muc/:id', component: Category, layout: ProductsLayout },
     { path: '/san-pham/:slug', component: ProductInfo, layout: MainLayout },
+    { path: '/quan-li-tai-khoan', component: ManageAcc, layout: DefaultLayout },
 ];
 
 const privateRoutes = [];
