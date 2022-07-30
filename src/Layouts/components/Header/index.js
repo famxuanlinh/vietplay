@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Tippy from '@tippyjs/react/headless'; // different import path!
 
 import classNames from 'classnames/bind';
@@ -18,6 +18,7 @@ function Header() {
     const [postList, setPostList] = useState([]);
     const { totalQty } = useCart();
     const { userInfo } = useLogin();
+    const history = useNavigate();
 
     const getCategory = () => {
         fetch(`https://vietplayplus.com/api/categories/all`)
@@ -30,6 +31,11 @@ function Header() {
     useEffect(() => {
         getCategory();
     }, []);
+
+    const handleOnClick = (e) => {
+        const searchValue = e.target.value;
+        history(`/store?q=${searchValue}`);
+    };
 
     return (
         <header className={cx('wrapper')} id="myHeader">
@@ -85,9 +91,20 @@ function Header() {
                         </div>
                     </div>
                     <div className={cx('right-menu')}>
-                        <button className={cx('btn-menu')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
+                        <div className={cx('search-input')}>
+                            <input
+                                className={cx('search-input_input')}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter') {
+                                        handleOnClick(e);
+                                    }
+                                }}
+                                spellCheck="false"
+                            ></input>
+                            <button className={cx('btn-menu')} onClick={handleOnClick}>
+                                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            </button>
+                        </div>
                         <Link to="/gio-hang">
                             <button className={cx('btn-menu')}>
                                 <p className={cx('noty')}>{totalQty}</p>
@@ -98,7 +115,7 @@ function Header() {
                             <Tippy
                                 interactive
                                 placement="top-end"
-                                hideOnClick="toggle"
+                                // hideOnClick="toggle"
                                 trigger="click"
                                 render={(attrs) => (
                                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>

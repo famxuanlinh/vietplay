@@ -133,6 +133,16 @@
     text-align: end;
 }
 
+.not-found {
+    height: 80%;
+    display: flex;
+    font-size: 2.4rem;
+    color: var(--primary-text);
+    padding: 400px 0;
+    align-items: center;
+    justify-content: center;
+}
+
 .pagination-content {
     display: flex;
     justify-content: flex-end;
